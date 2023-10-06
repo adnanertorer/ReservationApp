@@ -28,20 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ResponseProviders\CustomerReservations\Commands\Create\" />
     <Folder Include="ResponseProviders\CustomerReservations\Commands\Delete\" />
-    <Folder Include="ResponseProviders\CustomerReservations\Commands\Update\" />
-    <Folder Include="ResponseProviders\CustomerReservations\Constants\" />
-    <Folder Include="ResponseProviders\CustomerReservations\Profiles\" />
-    <Folder Include="ResponseProviders\CustomerReservations\Queries\GetById\" />
-    <Folder Include="ResponseProviders\CustomerReservations\Queries\GetList\" />
-    <Folder Include="ResponseProviders\CustomerReservations\Rules\" />
     <Folder Include="ResponseProviders\Customers\Commands\Delete\" />
-    <Folder Include="ResponseProviders\Customers\Constants\" />
-    <Folder Include="ResponseProviders\Customers\Rules\" />
     <Folder Include="ResponseProviders\Tables\Commands\Delete\" />
-    <Folder Include="ResponseProviders\Tables\Constants\" />
-    <Folder Include="ResponseProviders\Tables\Rules\" />
   </ItemGroup>
 
 </Project>

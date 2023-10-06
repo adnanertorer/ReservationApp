@@ -61,7 +61,7 @@ namespace ReservationAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("Reservation.DataLayer.Entities.CustomerReservation", b =>
@@ -99,7 +99,7 @@ namespace ReservationAPI.Migrations
 
                     b.HasIndex("TableId");
 
-                    b.ToTable("CustomerReservations");
+                    b.ToTable("CustomerReservations", (string)null);
                 });
 
             modelBuilder.Entity("Reservation.DataLayer.Entities.Table", b =>
@@ -129,7 +129,7 @@ namespace ReservationAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tables");
+                    b.ToTable("Tables", (string)null);
                 });
 
             modelBuilder.Entity("Reservation.DataLayer.Entities.CustomerReservation", b =>

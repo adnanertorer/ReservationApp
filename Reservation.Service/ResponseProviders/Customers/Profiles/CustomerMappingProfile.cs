@@ -3,6 +3,7 @@ using IsSystem.Application.Responses;
 using IsSystem.Core.Paging;
 using Reservation.DataLayer.Entities;
 using Reservation.Service.ResponseProviders.Customers.Commands.Create;
+using Reservation.Service.ResponseProviders.Customers.Commands.Update;
 using Reservation.Service.ResponseProviders.Customers.ResponseDtos;
 
 namespace Reservation.Service.ResponseProviders.Customers.Profiles
@@ -13,6 +14,7 @@ namespace Reservation.Service.ResponseProviders.Customers.Profiles
         {
             CreateMap<CustomerDto, Customer>().ReverseMap();
             CreateMap<CustomerDto, CreateCustomerCommand>().ReverseMap();
+            CreateMap<CustomerDto, UpdateCustomerCommand>().ReverseMap();
             CreateMap<Paginate<Customer>, GetListResponse<CustomerDto>>().ReverseMap();
         }
     }

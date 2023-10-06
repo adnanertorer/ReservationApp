@@ -1,6 +1,7 @@
 using Reservation.DataLayer;
 using Reservation.Business;
 using Reservation.Service;
+using IsSystem.Application.Exceptions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCustomExceptionMiddleware();
 
 app.UseHttpsRedirection();
 
