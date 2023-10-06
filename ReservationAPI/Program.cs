@@ -1,9 +1,13 @@
 using Reservation.DataLayer;
+using Reservation.Business;
+using Reservation.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDataLayerServices(builder.Configuration);
+builder.Services.AddBusinessServices();
+builder.Services.AddReservationServices();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

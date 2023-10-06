@@ -6,4 +6,47 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IsSystem.Application">
+      <HintPath>..\IsSystem.Application\bin\Debug\net7.0\IsSystem.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="IsSystem.Core">
+      <HintPath>..\Reservation.Business\bin\Debug\net7.0\IsSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Reservation.Business">
+      <HintPath>..\Reservation.Business\bin\Debug\net7.0\Reservation.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Reservation.DataLayer">
+      <HintPath>..\Reservation.Business\bin\Debug\net7.0\Reservation.DataLayer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ResponseProviders\CustomerReservations\Commands\Create\" />
+    <Folder Include="ResponseProviders\CustomerReservations\Commands\Delete\" />
+    <Folder Include="ResponseProviders\CustomerReservations\Commands\Update\" />
+    <Folder Include="ResponseProviders\CustomerReservations\Constants\" />
+    <Folder Include="ResponseProviders\CustomerReservations\Profiles\" />
+    <Folder Include="ResponseProviders\CustomerReservations\Queries\GetById\" />
+    <Folder Include="ResponseProviders\CustomerReservations\Queries\GetList\" />
+    <Folder Include="ResponseProviders\CustomerReservations\Rules\" />
+    <Folder Include="ResponseProviders\Customers\Commands\Delete\" />
+    <Folder Include="ResponseProviders\Customers\Constants\" />
+    <Folder Include="ResponseProviders\Customers\Rules\" />
+    <Folder Include="ResponseProviders\Tables\Commands\Create\" />
+    <Folder Include="ResponseProviders\Tables\Commands\Delete\" />
+    <Folder Include="ResponseProviders\Tables\Commands\Update\" />
+    <Folder Include="ResponseProviders\Tables\Constants\" />
+    <Folder Include="ResponseProviders\Tables\Profiles\" />
+    <Folder Include="ResponseProviders\Tables\Queries\GetById\" />
+    <Folder Include="ResponseProviders\Tables\Queries\GetList\" />
+    <Folder Include="ResponseProviders\Tables\Rules\" />
+  </ItemGroup>
+
 </Project>
