@@ -12,7 +12,7 @@ using Reservation.DataLayer;
 namespace ReservationAPI.Migrations
 {
     [DbContext(typeof(ReservationDbContext))]
-    [Migration("20231005192525_init")]
+    [Migration("20231007173252_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -87,7 +87,10 @@ namespace ReservationAPI.Migrations
                     b.Property<short>("GuestCount")
                         .HasColumnType("smallint");
 
-                    b.Property<DateTime>("ReservationDate")
+                    b.Property<DateTime>("ReservationEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ReservationStartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<long>("TableId")

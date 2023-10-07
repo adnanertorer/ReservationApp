@@ -6,11 +6,14 @@ namespace Reservation.Service.ResponseProviders.CustomerReservations.Commands.Cr
     {
         public CreateCustomerReservationValidator()
         {
-            RuleFor(c=>c.CustomerReservation.CustomerName).NotEmpty();
-            RuleFor(c=>c.CustomerReservation.ReservationDate).NotNull();
-            RuleFor(c=>c.CustomerReservation.CustomerId).NotNull();
+            RuleFor(c => c.CustomerReservation.CustomerDto.Name).NotEmpty();
+            RuleFor(c => c.CustomerReservation.CustomerDto.Surname).NotEmpty();
+            RuleFor(c => c.CustomerReservation.CustomerDto.Phone).NotEmpty();
+            RuleFor(c => c.CustomerReservation.CustomerDto.Email).NotEmpty();
+            RuleFor(c=>c.CustomerReservation.ReservationStartDate).NotNull();
+            RuleFor(c => c.CustomerReservation.ReservationEndDate).NotNull();
+            RuleFor(c=>c.CustomerReservation.TableDto).NotNull();
             RuleFor(c=>c.CustomerReservation.GuestCount).NotNull();
-
         }
     }
 }

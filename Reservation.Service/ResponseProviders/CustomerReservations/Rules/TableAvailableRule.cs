@@ -1,12 +1,12 @@
 ﻿using IsSystem.Application.Exceptions.Types;
+using IsSystem.Application.Rules;
 using Reservation.Business.Repositories.Abstracts;
-using Reservation.DataLayer.Enums;
 using Reservation.Service.ResponseProviders.CustomerReservations.Constants;
 using Reservation.Service.ResponseProviders.CustomerReservations.ResponseDtos;
 
 namespace Reservation.Service.ResponseProviders.CustomerReservations.Rules
 {
-    public class TableAvailableRule
+    public class TableAvailableRule: BaseBusinessRule
     {
         private readonly ICustomerReservationRepository _repository;
 
@@ -17,10 +17,10 @@ namespace Reservation.Service.ResponseProviders.CustomerReservations.Rules
 
         public async Task TableMustBeAvailable(CustomerReservationDto reservationDto)
         {
-            var result = await _repository.GetAsync(predicate: b => b.Id == reservationDto.TableId &&
-            (b.Table!.Status == (short)TableStatusEnum.Availabe || b.ReservationDate.AddHours(6) <= reservationDto.ReservationDate));
-
-            if (result == null)
+            var reservations = await _repository.AnyAsync(predicate: r => (r.ReservationStartDate <= reservationDto.ReservationStartDate
+            && r.ReservationEndDate >= reservationDto.ReservationStartDate) || (r.ReservationStartDate <= reservationDto.ReservationEndDate
+            && r.ReservationEndDate >= reservationDto.ReservationEndDate));
+            if (reservations)
             {
                 throw new BusinessException(ReservationMessages.TableIsNotAvailable);
             }

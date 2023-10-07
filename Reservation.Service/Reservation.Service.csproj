@@ -18,7 +18,7 @@
       <HintPath>..\IsSystem.Application\bin\Debug\net7.0\IsSystem.Application.dll</HintPath>
     </Reference>
     <Reference Include="IsSystem.Core">
-      <HintPath>..\Reservation.Business\bin\Debug\net7.0\IsSystem.Core.dll</HintPath>
+      <HintPath>..\IsSystem.Core\bin\Debug\net7.0\IsSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="Reservation.Business">
       <HintPath>..\Reservation.Business\bin\Debug\net7.0\Reservation.Business.dll</HintPath>

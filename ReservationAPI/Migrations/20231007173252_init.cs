@@ -56,7 +56,8 @@ namespace ReservationAPI.Migrations
                     TableId = table.Column<long>(type: "bigint", nullable: false),
                     CustomerId = table.Column<long>(type: "bigint", nullable: false),
                     GuestCount = table.Column<short>(type: "smallint", nullable: false),
-                    ReservationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ReservationStartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ReservationEndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)

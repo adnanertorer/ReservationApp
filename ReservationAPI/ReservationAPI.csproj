@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <Reference Include="IsSystem.Application">
-      <HintPath>..\IsSystem.Application\bin\Debug\net7.0\IsSystem.Application.dll</HintPath>
+      <HintPath>..\Reservation.Service\bin\Debug\net7.0\IsSystem.Application.dll</HintPath>
     </Reference>
     <Reference Include="Reservation.Business">
       <HintPath>..\Reservation.Business\bin\Debug\net7.0\Reservation.Business.dll</HintPath>

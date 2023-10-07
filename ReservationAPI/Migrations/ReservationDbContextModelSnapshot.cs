@@ -61,7 +61,7 @@ namespace ReservationAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Reservation.DataLayer.Entities.CustomerReservation", b =>
@@ -84,7 +84,10 @@ namespace ReservationAPI.Migrations
                     b.Property<short>("GuestCount")
                         .HasColumnType("smallint");
 
-                    b.Property<DateTime>("ReservationDate")
+                    b.Property<DateTime>("ReservationEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ReservationStartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<long>("TableId")
@@ -99,7 +102,7 @@ namespace ReservationAPI.Migrations
 
                     b.HasIndex("TableId");
 
-                    b.ToTable("CustomerReservations", (string)null);
+                    b.ToTable("CustomerReservations");
                 });
 
             modelBuilder.Entity("Reservation.DataLayer.Entities.Table", b =>
@@ -129,7 +132,7 @@ namespace ReservationAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tables", (string)null);
+                    b.ToTable("Tables");
                 });
 
             modelBuilder.Entity("Reservation.DataLayer.Entities.CustomerReservation", b =>

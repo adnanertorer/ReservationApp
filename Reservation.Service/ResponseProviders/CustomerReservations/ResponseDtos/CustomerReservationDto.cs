@@ -1,13 +1,14 @@
-﻿namespace Reservation.Service.ResponseProviders.CustomerReservations.ResponseDtos
+﻿using Reservation.Service.ResponseProviders.Customers.ResponseDtos;
+using Reservation.Service.ResponseProviders.Tables.ResponseDtos;
+
+namespace Reservation.Service.ResponseProviders.CustomerReservations.ResponseDtos
 {
     public class CustomerReservationDto
     {
-        public long Id { get; set; }
-        public long TableId { get; set; }
-        public string TableName { get; set; }
-        public long CustomerId { get; set; }
-        public string CustomerName { get; set; }
+        public CustomerDto CustomerDto { get; set; }
+        public TableDto TableDto { get; set; }
         public short GuestCount { get; set; }
-        public DateTime ReservationDate { get; set; }
+        public DateTime ReservationStartDate { get; set; }
+        public DateTime ReservationEndDate { get; set; }
     }
 }

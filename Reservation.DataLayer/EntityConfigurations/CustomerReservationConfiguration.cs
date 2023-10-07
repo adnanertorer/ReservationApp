@@ -12,7 +12,8 @@ namespace Reservation.DataLayer.EntityConfigurations
             builder.Property(p => p.CustomerId).IsRequired();
             builder.Property(p => p.TableId).IsRequired();
             builder.Property(p => p.GuestCount).IsRequired();
-            builder.Property(p => p.ReservationDate).IsRequired();
+            builder.Property(p => p.ReservationStartDate).IsRequired();
+            builder.Property(p => p.ReservationEndDate).IsRequired();
             builder.Property(p => p.CreatedAt).IsRequired();
             builder.HasOne(i => i.Customer).WithMany(i => i.CustomerReservations).
             HasForeignKey(i => i.CustomerId);

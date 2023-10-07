@@ -1,16 +1,12 @@
-﻿using IsSystem.Core.Repositories;
-
-namespace Reservation.DataLayer.Entities
+﻿namespace Reservation.Service.ResponseProviders.CustomerReservations.ResponseDtos
 {
-    public class CustomerReservation:Entity<long>
+    public class ReservationDto
     {
+        public long Id { get; set; }
         public long TableId { get; set; }
         public long CustomerId { get; set; }
         public short GuestCount { get; set; }
         public DateTime ReservationStartDate { get; set; }
         public DateTime ReservationEndDate { get; set; }
-
-        public Table? Table { get; set; }
-        public Customer? Customer { get; set; }
     }
 }
