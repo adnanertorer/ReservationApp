@@ -1,5 +1,6 @@
 ﻿using IsSystem.Application.Exceptions.ExceptionDetails;
 using IsSystem.Application.Exceptions.Extensions;
+using IsSystem.Application.Exceptions.Types;
 using Microsoft.AspNetCore.Http;
 
 namespace IsSystem.Application.Exceptions.Handlers
@@ -23,6 +24,13 @@ namespace IsSystem.Application.Exceptions.Handlers
         {
             Response.StatusCode = StatusCodes.Status500InternalServerError;
             string details = new InternalServerExceptionDetail(exception.Message).AsJson();
+            return Response.WriteAsync(details);
+        }
+
+        protected override Task HandleException(ValidationException validationException)
+        {
+            Response.StatusCode = StatusCodes.Status400BadRequest;
+            string details = new ValidationExceptionDetail(validationException.Errors).AsJson();
             return Response.WriteAsync(details);
         }
     }

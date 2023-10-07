@@ -1,6 +1,6 @@
-﻿namespace IsSystem.Application.Exceptions
+﻿namespace IsSystem.Application.Exceptions.Types
 {
-    public class BusinessException: Exception
+    public class BusinessException : Exception
     {
         public BusinessException()
         {

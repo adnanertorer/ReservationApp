@@ -1,4 +1,6 @@
-﻿using IsSystem.Application.Rules;
+﻿using FluentValidation;
+using IsSystem.Application.Pipelines.Validation;
+using IsSystem.Application.Rules;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -9,10 +11,12 @@ namespace Reservation.Service
         public static IServiceCollection AddReservationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddSubClassesOfType(Assembly.GetExecutingAssembly(), type: typeof(BaseBusinessRule));
             services.AddMediatR(configuration =>
             {
                 configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+                configuration.AddOpenBehavior(typeof(RequestValidationBehavior<,>));
             });
             return services;
         }

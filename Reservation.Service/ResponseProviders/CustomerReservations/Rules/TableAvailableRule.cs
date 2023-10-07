@@ -1,4 +1,4 @@
-﻿using IsSystem.Application.Exceptions;
+﻿using IsSystem.Application.Exceptions.Types;
 using Reservation.Business.Repositories.Abstracts;
 using Reservation.DataLayer.Enums;
 using Reservation.Service.ResponseProviders.CustomerReservations.Constants;
