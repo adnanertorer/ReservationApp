@@ -1,4 +1,5 @@
-﻿using FakeItEasy;
+﻿using System.Net;
+using FakeItEasy;
 using Reservation.Service.ResponseProviders.Tables.Commands.Create;
 using Reservation.Service.ResponseProviders.Tables.Commands.Update;
 using Reservation.Service.ResponseProviders.Tables.ResponseDtos;
@@ -27,7 +28,32 @@ namespace ReservationAPI.Tests.Controller
         public async Task AddTable_WithModel_ThenReturnsOk()
         {
             //Arrange
-            var expectedStatusCode = System.Net.HttpStatusCode.OK;
+            const HttpStatusCode expectedStatusCode = System.Net.HttpStatusCode.OK;
+
+            var expectedContent = new TableDto
+            {
+                Capacity = 6,
+                TableName = "D2",
+            };
+
+            var createCommand = new CreateTableCommand()
+            {
+                Table = expectedContent
+            };
+
+            // Act.
+            var response = await _httpClient.PostAsync("tables", JsonHelper.GetJsonStringContent<CreateTableCommand>(createCommand));
+
+            // Assert.
+            Assert.True(response.StatusCode == expectedStatusCode);
+
+        }
+
+        [Fact]
+        public async Task AddDuplicateTable_WithModel_ThenReturnsBadRequest()
+        {
+            //Arrange
+            var expectedStatusCode = System.Net.HttpStatusCode.BadRequest;
 
             var expectedContent = new TableDto
             {
