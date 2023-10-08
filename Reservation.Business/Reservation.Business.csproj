@@ -11,12 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="IsSystem.Core">
-      <HintPath>..\IsSystem.Core\bin\Debug\net7.0\IsSystem.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Reservation.DataLayer">
-      <HintPath>..\Reservation.DataLayer\bin\Debug\net7.0\Reservation.DataLayer.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\IsSystem.Core\IsSystem.Core.csproj" />
+    <ProjectReference Include="..\Reservation.DataLayer\Reservation.DataLayer.csproj" />
   </ItemGroup>
 
 </Project>

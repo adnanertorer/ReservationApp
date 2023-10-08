@@ -10,5 +10,7 @@ namespace Reservation.Service.ResponseProviders.CustomerReservations.ResponseDto
         public short GuestCount { get; set; }
         public DateTime ReservationStartDate { get; set; }
         public DateTime ReservationEndDate { get; set; }
+
+
     }
 }

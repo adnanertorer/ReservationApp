@@ -24,18 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="IsSystem.Application">
-      <HintPath>..\Reservation.Service\bin\Debug\net7.0\IsSystem.Application.dll</HintPath>
-    </Reference>
-    <Reference Include="Reservation.Business">
-      <HintPath>..\Reservation.Business\bin\Debug\net7.0\Reservation.Business.dll</HintPath>
-    </Reference>
-    <Reference Include="Reservation.DataLayer">
-      <HintPath>..\Reservation.DataLayer\bin\Debug\net7.0\Reservation.DataLayer.dll</HintPath>
-    </Reference>
-    <Reference Include="Reservation.Service">
-      <HintPath>..\Reservation.Service\bin\Debug\net7.0\Reservation.Service.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\IsSystem.Application\IsSystem.Application.csproj" />
+    <ProjectReference Include="..\Reservation.Business\Reservation.Business.csproj" />
+    <ProjectReference Include="..\Reservation.DataLayer\Reservation.DataLayer.csproj" />
+    <ProjectReference Include="..\Reservation.Service\Reservation.Service.csproj" />
   </ItemGroup>
 
 </Project>

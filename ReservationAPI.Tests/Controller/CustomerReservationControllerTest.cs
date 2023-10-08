@@ -1,7 +1,6 @@
 ﻿using System.Net;
 using Reservation.Service.ResponseProviders.CustomerReservations.Commands.Create;
 using Reservation.Service.ResponseProviders.CustomerReservations.ResponseDtos;
-using Reservation.Service.ResponseProviders.Customers.Commands.Create;
 using Reservation.Service.ResponseProviders.Customers.ResponseDtos;
 using Reservation.Service.ResponseProviders.Tables.ResponseDtos;
 using ReservationAPI.Tests.Helpers;

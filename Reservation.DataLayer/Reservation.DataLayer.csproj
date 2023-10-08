@@ -17,9 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="IsSystem.Core">
-      <HintPath>..\IsSystem.Core\bin\Debug\net7.0\IsSystem.Core.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\IsSystem.Core\IsSystem.Core.csproj" />
   </ItemGroup>
 
 </Project>

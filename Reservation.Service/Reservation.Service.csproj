@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -14,24 +14,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="IsSystem.Application">
-      <HintPath>..\IsSystem.Application\bin\Debug\net7.0\IsSystem.Application.dll</HintPath>
-    </Reference>
-    <Reference Include="IsSystem.Core">
-      <HintPath>..\IsSystem.Core\bin\Debug\net7.0\IsSystem.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Reservation.Business">
-      <HintPath>..\Reservation.Business\bin\Debug\net7.0\Reservation.Business.dll</HintPath>
-    </Reference>
-    <Reference Include="Reservation.DataLayer">
-      <HintPath>..\Reservation.Business\bin\Debug\net7.0\Reservation.DataLayer.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="ResponseProviders\CustomerReservations\Commands\Delete\" />
     <Folder Include="ResponseProviders\Customers\Commands\Delete\" />
     <Folder Include="ResponseProviders\Tables\Commands\Delete\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IsSystem.Application\IsSystem.Application.csproj" />
+    <ProjectReference Include="..\IsSystem.Core\IsSystem.Core.csproj" />
+    <ProjectReference Include="..\Reservation.Business\Reservation.Business.csproj" />
+    <ProjectReference Include="..\Reservation.DataLayer\Reservation.DataLayer.csproj" />
   </ItemGroup>
 
 </Project>

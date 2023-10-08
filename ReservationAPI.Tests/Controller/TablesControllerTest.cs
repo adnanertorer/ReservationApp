@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using FakeItEasy;
 using Reservation.Service.ResponseProviders.Tables.Commands.Create;
 using Reservation.Service.ResponseProviders.Tables.Commands.Update;
 using Reservation.Service.ResponseProviders.Tables.ResponseDtos;

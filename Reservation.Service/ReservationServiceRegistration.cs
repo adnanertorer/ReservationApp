@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using IsSystem.Application.Pipelines.Validation;
 using IsSystem.Application.Rules;
+using IsSystem.Application.Tools.Mail;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -18,6 +19,7 @@ namespace Reservation.Service
                 configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
                 configuration.AddOpenBehavior(typeof(RequestValidationBehavior<,>));
             });
+            services.AddScoped<IMailSender, MailSender>();
             return services;
         }
 
