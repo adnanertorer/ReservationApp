@@ -92,8 +92,6 @@ namespace Reservation.Service.ResponseProviders.CustomerReservations.Commands.Cr
                 };
 
                 _mailSender.SendMail(mailModel);  // bilgi maili gonderilir
-                
-
                 return result;
             }
         }

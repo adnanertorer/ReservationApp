@@ -4,7 +4,7 @@ using Reservation.Service.ResponseProviders.Customers.Commands.Update;
 using Reservation.Service.ResponseProviders.Customers.ResponseDtos;
 using ReservationAPI.Tests.Helpers;
 
-namespace ReservationAPI.Tests.Controller
+namespace ReservationAPI.Tests.Controllers
 {
     public class CustomerControllerTest
     {

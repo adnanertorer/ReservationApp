@@ -9,6 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDataLayerServices(builder.Configuration);
 builder.Services.AddBusinessServices();
 builder.Services.AddReservationServices();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+   builder => builder.AllowAnyOrigin()
+       .AllowAnyMethod()
+       .AllowAnyHeader());
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -23,8 +32,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
- if(app.Environment.IsProduction())
+ //if(app.Environment.IsProduction())
     app.UseCustomExceptionMiddleware();
+
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 

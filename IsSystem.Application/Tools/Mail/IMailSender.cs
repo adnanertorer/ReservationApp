@@ -2,6 +2,6 @@
 {
     public interface IMailSender
     {
-        void SendMail(MailModel mailModel);
+        bool SendMail(MailModel mailModel);
     }
 }

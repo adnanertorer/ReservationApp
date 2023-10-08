@@ -1,0 +1,72 @@
+
+<div id="booking" class="section">
+  <div class="section-center">
+    <div class="container">
+      <div class="row">
+        <div class="booking-form">
+          <form>
+            <div class="row no-margin">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <span class="form-label">Başlama Zamanı</span>
+                  <input class="form-control" type="datetime-local" name="reservationStartDate" [(ngModel)]="model!.customerReservation.reservationStartDate" required>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <span class="form-label">Bitiş Zamanı</span>
+                  <input class="form-control" type="datetime-local" name="reservationStartDate" [(ngModel)]="model!.customerReservation.reservationEndDate" required>
+                </div>
+              </div>
+            </div>
+            <div class="row no-margin">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <span class="form-label">Kaç kişilik</span>
+                  <select class="form-control" name="guestCount" [(ngModel)]="model!.customerReservation.guestCount">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                  </select>
+                  <span class="select-arrow"></span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <span class="form-label">Masa</span>
+              <select class="form-control" name="tableId" required  [(ngModel)]="model!.customerReservation.tableId" (change)="tableChange($event)">
+                <option value="0" selected hidden>Lütfen bir masa seçiniz</option>
+                <option value="{{item.id}}" *ngFor="let item of tables">{{item.tableName}}  / 1-{{item.capacity}} kişilik</option>
+              </select>
+              <span class="select-arrow"></span>
+            </div>
+            <div class="form-group">
+              <span class="form-label">Adınız</span>
+              <input class="form-control" type="text" name="name" [(ngModel)]="model!.customerReservation.customerDto.name" placeholder="Lütfen adınızı yazınız">
+            </div>
+            <div class="form-group">
+              <span class="form-label">Soyadınız</span>
+              <input class="form-control" type="text" name="surname" [(ngModel)]="model!.customerReservation.customerDto.surname" placeholder="Lütfen soyadınızı yazınız">
+            </div>
+            <div class="form-group">
+              <span class="form-label">Email</span>
+              <input class="form-control" type="email" name="email" [(ngModel)]="model!.customerReservation.customerDto.email" placeholder="Lütfen mail adresinizi yazınız">
+            </div>
+            <div class="form-group">
+              <span class="form-label">Phone</span>
+              <input class="form-control" name="phone" type="tel" [(ngModel)]="model!.customerReservation.customerDto.phone" placeholder="Lütfen telefonunuzu yazınız">
+            </div>
+            <div class="form-btn">
+              <button class="submit-btn" (click)="send()">Reservasyon</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

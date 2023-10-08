@@ -5,7 +5,7 @@ namespace IsSystem.Application.Tools.Mail
 {
     public class MailSender : IMailSender
     {
-        public void SendMail(MailModel mailModel)
+        public bool SendMail(MailModel mailModel)
         {
             try
             {
@@ -32,16 +32,16 @@ namespace IsSystem.Application.Tools.Mail
                 };
 
                 smtpClient.Send(mail);
+                return true;
             }
 
             catch (SmtpException ex)
             {
-                throw new ApplicationException
-                  ("SmtpException has occured: " + ex.Message);
+                return false;
             }
             catch (Exception)
             {
-                throw;
+                return false;
             }
         }
     }

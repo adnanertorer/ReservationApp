@@ -17,12 +17,21 @@ namespace Reservation.Service.ResponseProviders.CustomerReservations.Rules
 
         public async Task TableMustBeAvailable(CustomerReservationDto reservationDto)
         {
-            var reservations = await _repository.AnyAsync(predicate: r => (r.ReservationStartDate <= reservationDto.ReservationStartDate
+            var reservations = await _repository.AnyAsync(predicate: r => r.TableId == reservationDto.TableDto.Id &&
+            (r.ReservationStartDate <= reservationDto.ReservationStartDate
             && r.ReservationEndDate >= reservationDto.ReservationStartDate) || (r.ReservationStartDate <= reservationDto.ReservationEndDate
-            && r.ReservationEndDate >= reservationDto.ReservationEndDate));
+            && r.ReservationEndDate >= reservationDto.ReservationEndDate)); // verilen zamanlar arasında secilen masa dolu mu?
             if (reservations)
             {
-                throw new BusinessException(ReservationMessages.TableIsNotAvailable);
+                throw new BusinessException(ReservationMessages.TableIsNotAvailable); // dolu ise durum mesaji firlat
+            }
+            else
+            {
+                if(reservationDto.GuestCount > reservationDto.TableDto.Capacity) // dolu degil ise masa kapasitesi ile kisi sayini kontrol et
+                {
+                    // kisi sayisi masa kapasitesinden buyukse durum mesaji firlat
+                    throw new BusinessException(String.Format(ReservationMessages.TableCapacityNotAvailable, reservationDto.TableDto.Capacity, reservationDto.GuestCount));
+                }
             }
         }
     }

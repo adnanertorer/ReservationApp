@@ -5,7 +5,7 @@ using Reservation.Service.ResponseProviders.Customers.ResponseDtos;
 using Reservation.Service.ResponseProviders.Tables.ResponseDtos;
 using ReservationAPI.Tests.Helpers;
 
-namespace ReservationAPI.Tests.Controller;
+namespace ReservationAPI.Tests.Controllers;
 
 public class CustomerReservationControllerTest
 {
